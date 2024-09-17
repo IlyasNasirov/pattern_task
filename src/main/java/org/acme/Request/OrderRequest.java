@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.Request;
 
 import io.smallrye.common.constraint.NotNull;
 import lombok.Getter;
