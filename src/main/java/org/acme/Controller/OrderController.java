@@ -29,7 +29,7 @@ public class OrderController {
             orderBuilder.addProduct(ProductFactory.createProduct(productType));
         }
         Order order = orderBuilder.build();
-        System.out.println("hello world  ");
+
         OrderHandler orderHandler = new StockCheckHandler();
         orderHandler
                 .setNext(new PaymentHandler())
