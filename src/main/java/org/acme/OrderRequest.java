@@ -1,4 +1,4 @@
-package org.acme.Entity;
+package org.acme;
 
 import io.smallrye.common.constraint.NotNull;
 import lombok.Getter;

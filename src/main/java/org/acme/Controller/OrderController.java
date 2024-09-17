@@ -9,7 +9,7 @@ import org.acme.ChainOfResponsibility.PackagingHandler;
 import org.acme.ChainOfResponsibility.PaymentHandler;
 import org.acme.ChainOfResponsibility.ShippingHandler;
 import org.acme.ChainOfResponsibility.StockCheckHandler;
-import org.acme.Entity.OrderRequest;
+import org.acme.OrderRequest;
 import org.acme.Factory.ProductFactory;
 import org.acme.Factory.ProductType;
 import org.acme.Strategy.DeliveryStrategyFactory;
