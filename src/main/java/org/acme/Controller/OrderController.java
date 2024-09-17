@@ -28,16 +28,14 @@ public class OrderController {
         for (ProductType productType : request.getProductTypes()) {
             orderBuilder.addProduct(ProductFactory.createProduct(productType));
         }
-
         Order order = orderBuilder.build();
 
-        OrderHandler stockCheck = new StockCheckHandler();
-        OrderHandler payment = new PaymentHandler();
-        OrderHandler packaging = new PackagingHandler();
-        OrderHandler shipping = new ShippingHandler();
-
-        stockCheck.setNext(payment).setNext(packaging).setNext(shipping);
-        stockCheck.handle(order);
+        OrderHandler orderHandler = new StockCheckHandler();
+        orderHandler
+                .setNext(new PaymentHandler())
+                .setNext(new PackagingHandler())
+                .setNext(new ShippingHandler());
+        orderHandler.handle(order);
 
         return Response.ok("Successful, order created").build();
     }
